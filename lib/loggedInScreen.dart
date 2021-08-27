@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/scheduler.dart';
+
 import 'package:phone_verification/loginScreen.dart';
+import 'package:phone_verification/main_drawer.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -25,33 +27,37 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("Chalo")),
+        ),
+        drawer: MainDrawer(),
         body: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Text(
-            'Welcome ' + userName,
-            style: TextStyle(fontSize: 30),
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                'Welcome ' + userName,
+                style: TextStyle(fontSize: 30),
+              ),
+              Text('(cellnumber: ' +
+                  (_auth.currentUser.phoneNumber != null
+                      ? _auth.currentUser.phoneNumber
+                      : '') +
+                  ' uid:' +
+                  (_auth.currentUser.uid != null ? _auth.currentUser.uid : '') +
+                  ')'),
+              ElevatedButton(
+                  onPressed: () => {
+                        //sign out
+                        signOut()
+                      },
+                  child: Text('Sign out'))
+            ],
           ),
-          Text('(cellnumber: ' +
-              (_auth.currentUser.phoneNumber != null
-                  ? _auth.currentUser.phoneNumber
-                  : '') +
-              ' uid:' +
-              (_auth.currentUser.uid != null ? _auth.currentUser.uid : '') +
-              ')'),
-          ElevatedButton(
-              onPressed: () => {
-                    //sign out
-                    signOut()
-                  },
-              child: Text('Sign out'))
-        ],
-      ),
-    ));
+        ));
   }
 
   Future getUser() async {
