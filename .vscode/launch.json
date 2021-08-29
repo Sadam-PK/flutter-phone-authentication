@@ -7,7 +7,7 @@
             "type": "dart",
             "args": [
                 "-d",
-                "<Pixel 4 API 25>"
+                "Start Pixel 4 API 25"
             ]
         }
     ]

@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
-import 'package:phone_verification/registerScreen.dart';
-import 'package:phone_verification/loggedInScreen.dart';
+import 'package:phone_verification/screens/registerScreen.dart';
+import 'package:phone_verification/screens/loggedInScreen.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;

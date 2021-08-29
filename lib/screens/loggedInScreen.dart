@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/scheduler.dart';
 
 // import 'package:phone_verification/loginScreen.dart';
-import 'package:phone_verification/main_drawer.dart';
+import 'package:phone_verification/screens/main_drawer.dart';
 
 // final FirebaseAuth _auth = FirebaseAuth.instance;
 // final FirebaseFirestore _firestore = FirebaseFirestore.instance;

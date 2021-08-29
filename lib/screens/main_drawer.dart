@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:phone_verification/loggedInScreen.dart';
+import 'package:phone_verification/screens/loggedInScreen.dart';
+import 'package:phone_verification/screens/profileScreen.dart';
+import 'package:phone_verification/route/route.dart';
+import '../route/route.dart' as route;
 
 import 'loginScreen.dart';
 
@@ -45,27 +48,67 @@ class _MainDrawerState extends State<MainDrawer> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      userName,
-                      style: TextStyle(fontSize: 30),
+                    padding: const EdgeInsets.only(top: 16.0),
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child: Text(
+                          userName,
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ),
                     ),
                   ),
-                  Text('Phone: ' +
+                  Divider(
+                    color: Colors.black,
+                  ),
+                  //Phone
+                  ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text(
                       (_auth.currentUser.phoneNumber != null
                           ? _auth.currentUser.phoneNumber
-                          : '') +
-                      // ' ID: ' +
-                      // (_auth.currentUser.uid != null
-                      //     ? _auth.currentUser.uid
-                      //     : '') +
-                      ''),
+                          : ''),
+                    ),
+                    // Text('Phone: ' +
+                    //     (_auth.currentUser.phoneNumber != null
+                    //         ? _auth.currentUser.phoneNumber
+                    //         : '') +
+
+                    // ' ID: ' +
+                    // (_auth.currentUser.uid != null
+                    //     ? _auth.currentUser.uid
+                    //     : '') +
+                  ),
+                  //Account
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text(
+                      ("My Account"),
+                    ),
+                  ),
+                  //Account
+                  ListTile(
+                    leading: Icon(Icons.settings),
+                    title: Text(
+                      ("Settings"),
+                    ),
+                  ),
+
+                  Divider(
+                    color: Colors.black,
+                  ),
+
                   ElevatedButton(
                     onPressed: () => {
                       //sign out
                       signOut()
                     },
                     child: Text('Sign out'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => {},
+                    child: Text('Switch Mode'),
                   ),
                 ],
               ),

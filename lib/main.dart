@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:phone_verification/loginScreen.dart';
+import 'route/route.dart' as route;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,10 @@ class App extends StatelessWidget {
                 inputDecorationTheme: InputDecorationTheme(
                     labelStyle: TextStyle(color: Colors.grey)),
                 backgroundColor: Colors.white),
-            home: LoginScreen(),
+
+            onGenerateRoute: route.controller,
+            initialRoute: route.loginPage,
+            // home: LoginScreen(),
           );
         }
 
