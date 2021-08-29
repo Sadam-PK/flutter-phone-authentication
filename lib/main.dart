@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:phone_verification/screens/loginScreen.dart';
+import 'package:phone_verification/screens/profileScreen.dart';
 import 'route/route.dart' as route;
 
 void main() {
@@ -37,8 +39,13 @@ class App extends StatelessWidget {
                 backgroundColor: Colors.white),
 
             onGenerateRoute: route.controller,
-            initialRoute: route.loginPage,
-            // home: LoginScreen(),
+            initialRoute: route.profilePage,
+
+            // initialRoute: "/profile",
+            // routes: {
+            //   "/": (context) => LoginScreen(),
+            //   "/profile": (context) => Profile(),
+            // },
           );
         }
 
@@ -54,7 +61,7 @@ class App extends StatelessWidget {
                     backgroundColor: Theme.of(context).primaryColor,
                   )
                 ],
-              )
+              ),
             ]);
       },
     );

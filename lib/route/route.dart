@@ -11,10 +11,13 @@ Route<dynamic> controller(RouteSettings settings) {
   switch (settings.name) {
     case loginPage:
       return MaterialPageRoute(builder: (context) => LoginScreen());
+      break;
     case homePage:
       return MaterialPageRoute(builder: (context) => App());
+      break;
     case profilePage:
       return MaterialPageRoute(builder: (context) => Profile());
+      break;
     default:
       throw ('This route does not exist');
   }

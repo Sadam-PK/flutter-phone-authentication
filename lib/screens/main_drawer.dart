@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:phone_verification/screens/loggedInScreen.dart';
 import 'package:phone_verification/screens/profileScreen.dart';
-import 'package:phone_verification/route/route.dart';
 import '../route/route.dart' as route;
 
 import 'loginScreen.dart';
@@ -80,19 +78,28 @@ class _MainDrawerState extends State<MainDrawer> {
                     //     ? _auth.currentUser.uid
                     //     : '') +
                   ),
+
                   //Account
                   ListTile(
                     leading: Icon(Icons.person),
                     title: Text(
                       ("My Account"),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Profile()));
+                    },
                   ),
+
                   //Account
                   ListTile(
                     leading: Icon(Icons.settings),
                     title: Text(
                       ("Settings"),
                     ),
+                    onTap: () {},
                   ),
 
                   Divider(
