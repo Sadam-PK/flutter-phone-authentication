@@ -39,7 +39,7 @@ class App extends StatelessWidget {
                 backgroundColor: Colors.white),
 
             onGenerateRoute: route.controller,
-            initialRoute: route.profilePage,
+            initialRoute: route.loginPage,
 
             // initialRoute: "/profile",
             // routes: {

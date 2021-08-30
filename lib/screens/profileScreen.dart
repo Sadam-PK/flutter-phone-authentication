@@ -11,7 +11,15 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(child: Text("Profile")),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Edit Profile"),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {},
+          ),
+        ),
+      ),
     );
   }
 }
