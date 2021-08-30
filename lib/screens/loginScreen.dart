@@ -70,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   key: _formKey,
                   child: Column(
                     children: [
+                      Image.asset("assets/images/login.png"),
                       Container(
                           child: Padding(
                         padding: const EdgeInsets.symmetric(
