@@ -13,7 +13,13 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Chalo")),
+        centerTitle: true,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("Chalo"),
+          ],
+        ),
       ),
       drawer: MainDrawer(),
       body: Padding(
