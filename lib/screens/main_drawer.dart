@@ -83,7 +83,7 @@ class _MainDrawerState extends State<MainDrawer> {
                   ListTile(
                     leading: Icon(Icons.person),
                     title: Text(
-                      ("My Account"),
+                      ("Profile"),
                     ),
                     onTap: () {
                       Navigator.push(

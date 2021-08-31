@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phone_verification/screens/googleMap.dart';
 import 'package:phone_verification/screens/main_drawer.dart';
 
 class LoggedInScreen extends StatefulWidget {
@@ -17,20 +18,12 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("Chalo"),
+            Text("Chalo Captain"),
           ],
         ),
       ),
       drawer: MainDrawer(),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [Center(child: Text("You are on a homepage."))],
-        ),
-      ),
+      body: MapSample(),
     );
   }
 }

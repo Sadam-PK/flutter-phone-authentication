@@ -7,6 +7,8 @@ void main() {
   runApp(App());
 }
 
+// API KEY (AIzaSyDgJX3fH60Yq-4mD2jLrKkpn37lk76s44c)
+
 class App extends StatelessWidget {
   // Create the initialization Future outside of `build`:
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
