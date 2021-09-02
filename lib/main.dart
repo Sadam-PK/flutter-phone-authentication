@@ -59,7 +59,7 @@ class App extends StatelessWidget {
                 children: <Widget>[
                   CircularProgressIndicator(
                     backgroundColor: Theme.of(context).primaryColor,
-                  )
+                  ),
                 ],
               ),
             ]);

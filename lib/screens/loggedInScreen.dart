@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:phone_verification/components/bottomNav.dart';
 import 'package:phone_verification/screens/googleMap.dart';
-import 'package:phone_verification/screens/main_drawer.dart';
+import 'package:phone_verification/components/main_drawer.dart';
 
 class LoggedInScreen extends StatefulWidget {
   LoggedInScreen({Key key}) : super(key: key);
@@ -23,7 +24,19 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
         ),
       ),
       drawer: MainDrawer(),
-      body: MapSample(),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            child: MapScreen(),
+            // margin: EdgeInsets.only(bottom: 40),
+          ),
+          // Container(
+          //   width: double.infinity,
+          //   height: 30,
+          // ),
+        ],
+      ),
+      bottomNavigationBar: BottomNav(),
     );
   }
 }
