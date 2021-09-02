@@ -17,15 +17,18 @@ class _BottomNavState extends State<BottomNav> {
       iconSize: 30,
       unselectedFontSize: 15,
       selectedFontSize: 15,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white,
+      backgroundColor: Colors.redAccent,
       items: [
         BottomNavigationBarItem(
-            icon: Icon(Icons.car_rental),
-            title: Text("Create Offer"),
-            backgroundColor: Colors.black),
+          icon: Icon(Icons.car_rental),
+          title: Text("Create Offer"),
+        ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.car_rental),
-            title: Text("Ride Requests"),
-            backgroundColor: Colors.black),
+          icon: Icon(Icons.car_rental),
+          title: Text("Ride Requests"),
+        ),
       ],
       onTap: (index) {
         setState(() {
